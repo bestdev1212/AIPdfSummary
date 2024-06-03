@@ -18,4 +18,6 @@ Provide queries in a.json
 npm start
 ```
 
-Then output docx files for summaries with same name per pdf file will be generated in summaries folder
+Then output docx files for summaries with same name per pdf file will be generated in summaries folder.
+
+(If error is occured during run, error.txt will be generated)
