@@ -15,6 +15,7 @@ Provide input directory and filenames and output directory along with openai key
 Provide queries in a.json
 
 ```
+npm install
 npm start
 ```
 
