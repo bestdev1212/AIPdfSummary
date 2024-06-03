@@ -1,0 +1,12 @@
+{
+    "input": {
+        "directory": "books/",
+        "files": [
+            "Food-and-Health.pdf"
+        ]
+    },
+    "output": {
+        "directory": "summaries/"
+    },
+    "openai_key": "sk-proj-bip9EM16kronRgEuBH7eT3BlbkFJTPc6o87A4L29zMJar3G"
+}

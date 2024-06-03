@@ -1,0 +1,27 @@
+{
+  "name": "openai-book-summary",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx ts-node index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@adobe/helix-md2docx": "^2.1.57",
+    "docx": "^8.5.0",
+    "googleapis": "^137.1.0",
+    "html-docx-js": "^0.3.1",
+    "html-to-docx": "^1.8.0",
+    "markdown": "^0.5.0",
+    "openai": "^4.47.2",
+    "pandoc": "^0.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/html-docx-js": "^0.3.4"
+  }
+}
