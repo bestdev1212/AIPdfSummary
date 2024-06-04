@@ -131,7 +131,7 @@ async function main() {
     }catch(error){
         console.log(error)
         // write error in txt file
-        await writeFile("./error.txt", error)
+        await writeFile("./error.txt", `${error}`)
     }
     
 }
