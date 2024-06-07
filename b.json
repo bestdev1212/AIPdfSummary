@@ -1,9 +1,6 @@
 {
     "input": {
-        "directory": "books/",
-        "files": [
-            "Food-and-Health.pdf"
-        ]
+        "directory": "books/"
     },
     "output": {
         "directory": "summaries/"

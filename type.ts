@@ -8,7 +8,7 @@ export interface ConfigB {
 
 export interface Input {
     directory: string;
-    files:     string[];
+    files?:     string[];
 }
 
 export interface Output {

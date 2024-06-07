@@ -1,6 +1,6 @@
 import OpenAI from "openai";
 import fs from 'fs';
-
+import { promises as fs2 } from 'fs';
 import {
     configA,
     configB,
@@ -29,6 +29,22 @@ async function main() {
         if (!configB || !configA) {
             return
         }
+
+        try{
+            await fs2.access('error.txt');
+
+            // Delete the file
+            await fs2.unlink('error.txt');
+        }catch(e){
+
+        }
+        
+
+        // make a list of files in directory
+        const files = await fs2.readdir(configB.input.directory);
+        console.log(files)
+   
+        configB.input.files =files
 
         // get list of full path of pdfs
         const fullPaths = configB.input.files.map(v => configB?.input.directory + v)
