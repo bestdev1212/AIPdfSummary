@@ -2,6 +2,53 @@
   "queries": [
     {
       "query": "Write down the 10 main topics in this book for me?"
+    },
+    {
+      "query": "Create an introduction for me for the TLDR summary I'm currently creating for this book? List in the introduction all the topics in the book that I will cover in my summary"
+    },
+    {
+      "query": "Summarize the topic 1 for me as a chapter in my TLDR summary book with the important highlights"
+    },
+    {
+      "query": "Summarize the topic 2 for me as a chapter in my TLDR summary book with the important highlights"
+    },
+    {
+      "query": "Summarize the topic 3 for me as a chapter in my TLDR summary book with the important highlights"
+    },
+    {
+      "query": "Summarize the topic 4 for me as a chapter in my TLDR summary book with the important highlights"
+    },
+    {
+      "query": "Summarize the topic 5 for me as a chapter in my TLDR summary book with the important highlights"
+    },
+    {
+      "query": "Summarize the topic 6 for me as a chapter in my TLDR summary book with the important highlights"
+    },
+    {
+      "query": "Summarize the topic 7 for me as a chapter in my TLDR summary book with the important highlights"
+    },
+    {
+      "query": "Summarize the topic 8 for me as a chapter in my TLDR summary book with the important highlights"
+    },
+    {
+      "query": "Summarize the topic 9 for me as a chapter in my TLDR summary book with the important highlights"
+    },
+    {
+      "query": "Summarize the topic 10 for me as a chapter in my TLDR summary book with the important highlights"
+    },
+    {
+      "query": "Can you describe the book to me in 50 words?"
+    },
+    {
+      "query": "Sao Short's My TLDR on 'Human Foods and Their Nutritive Value' by Harry Snyder invites you to delve into the intricate world of food science and nutrition without the need to navigate through extensive and complex texts. Why commit hours to studying dense nutritional manuals when you can grasp their essence in a matter of minutes? Life is short - optimize your learning efficiently. This guide distills the fundamental aspects of food composition, nutritional value, and the impact of various cooking methods on food's nutritive content into a concise and manageable format. Read, enjoy, learn, and immerse yourself in the science of nutrition without spending unnecessary time. It's perfect for the modern reader looking to expand their knowledge on dietary science promptly. This book is ideal for students, health enthusiasts, and any reader seeking to gain a deeper understanding of the nutritional aspects of different foods without getting lost in the technicalities. Whether you're new to the subject of nutrition or already have a background in the field, 'Human Foods and Their Nutritive Value' provides a comprehensive overview of essential dietary information, encouraging readers to appreciate the importance of balanced nutrition and mindful eating. This description was written about another book I did a TLDR for. Can you keep the text just make an adjustment to the new book"
+    },
+    {
+      "query": "Choose up to three categories that describe your book. Note: You must select your primary marketplace and audience first on Amazon Kindle books."
+    },
+    {
+      "query": "Choose up to 7 keywords highlighting your book’s unique traits. Keywords are typically short phrases, up to 50 characters, that customers use to narrow their book search on Amazon. Example: medieval fantasy books."
     }
   ]
 }
+
+

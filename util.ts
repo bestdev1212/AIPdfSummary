@@ -64,3 +64,50 @@ export async function convertMD2DocxAndSave(filePath: string, content: string) {
 
     }
 }
+
+
+
+export async function updateProgress(progress: number):Promise<boolean> {
+  try {
+    // Ensure progress is within the valid range (0 to 100)
+    if (progress < 0 || progress > 100) {
+      throw new Error('Progress must be between 0 and 100.');
+    }
+
+    // Convert progress to a formatted string with two decimal places and a percentage sign
+    const progressString = progress.toFixed(2) + '%';
+
+    // Delete any previously created progress files
+    const status = await deletePreviousProgress();
+    if(status == false) return false;
+    // Create a new progress file
+    await fs.writeFile(progressString, '');
+
+    console.log(`Progress updated to ${progressString}.`);
+    return true;
+  } catch (error) {
+    console.error('Error updating progress:', error);
+    return false;
+  }
+}
+
+export async function deletePreviousProgress():Promise<boolean> {
+  try {
+    // Read the current directory to find progress files
+    const files = await fs.readdir('./');
+
+    // Filter out files with progress filenames
+    const progressFiles = files.filter(file => /^\d+\.\d+%$/.test(file));
+    console.log(progressFiles)
+    if(progressFiles.length == 0) return false
+    // Delete each progress file
+    for (const file of progressFiles) {
+      await fs.unlink(file);
+      console.log(`Deleted previous progress file: ${file}`);
+    }
+    return true;
+  } catch (error) {
+    console.error('Error deleting previous progress files:', error);
+    return false;
+  }
+}

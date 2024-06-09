@@ -4,6 +4,7 @@ export interface ConfigB {
     input:      Input;
     output:     Output;
     openai_key: string;
+    delay: number;
 }
 
 export interface Input {
