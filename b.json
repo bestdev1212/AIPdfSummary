@@ -5,6 +5,6 @@
     "output": {
         "directory": "summaries/"
     },
-    "openai_key": "sk-proj-NIKFf4FTFGu8UfPVdEBzT3BlbkFJavHPrTtwBah9ztiV3AGI",
+    "openai_key": "",
     "delay": 10
 }

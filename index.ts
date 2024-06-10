@@ -67,11 +67,10 @@ async function main() {
             instructions: `Answer user's question based on the knowledge from pdf files in file_search
 
             `,
-            model: "gpt-4-turbo",
+            // model: "gpt-4-turbo",
             // model: "gpt-4o",
-            // model: "gpt-3.5-turbo",
+            model: "gpt-3.5-turbo",
             tools: [{ type: "file_search" }],
-
         });
         // loop through all pdfs
         await fs2.writeFile('0.0%', '');
@@ -85,8 +84,25 @@ async function main() {
             });
 
             console.log(file);
+
+            let vectorStore = await openai.beta.vectorStores.create({
+                name: "rag-store",
+                file_ids: [file.id],
+                expires_after: {
+                  anchor: "last_active_at",
+                  days: 1
+                }
+              });
+
+           
             // create openai assistant thread
-            const thread = await openai.beta.threads.create();
+            const thread = await openai.beta.threads.create({
+                tool_resources: {
+                    file_search: {
+                        vector_store_ids: [vectorStore.id]
+                    }
+                }
+            });
             // loop through queries
             for (let j = 0; j < configA.queries.length; j++) {
 
@@ -102,7 +118,7 @@ async function main() {
                             content:
                                 q.query,
                             // Attach the new file to the message.
-                            attachments: [{ file_id: file.id, tools: [{ type: "file_search" }] }],
+                            // attachments: [{ file_id: file.id, tools: [{ type: "file_search" }] }],
                         }
                     );
 
@@ -112,11 +128,13 @@ async function main() {
                         assistant_id: assistant.id,
                     });
 
+                    console.log(run)
                     // get response from openai 
                     const messages = await openai.beta.threads.messages.list(thread.id, {
                         run_id: run.id,
                     });
 
+                    // console.log(messages)
                     const message = messages.data.pop()!;
                     // if response is not get, retry again...
                     if (message == undefined) {
@@ -124,6 +142,7 @@ async function main() {
                         console.log("retrying...")
                         await new Promise(resolve => setTimeout(resolve, delay*1000));
                         delay *=2;
+                        delay = Math.min(60, delay)
                         continue;
                     }
                     delay = original_delay
